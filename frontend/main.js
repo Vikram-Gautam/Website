@@ -70,7 +70,7 @@ btnCompress.addEventListener('click', async () => { //async so we don't freeze
     if (!textValue) return alert("Please type some text first!");
 
     try {
-        const response = await fetch('http://website-pykn.onrender.com/compress', {
+        const response = await fetch('https://website-pykn.onrender.com/compress', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ text: textValue }) // convert json to string
@@ -100,7 +100,7 @@ btnDecompress.addEventListener('click', async () => {
     console.log("What JavaScript is trying to send to Python:", bitstreamValue);
 
     try {
-        const response = await fetch('http://website-pykn.onrender.com/decompress', {
+        const response = await fetch('https://website-pykn.onrender.com/decompress', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             // 🔥 CRITICAL: It must be exactly 'bits' in lowercase!
@@ -155,7 +155,7 @@ btnPredict.addEventListener('click', async () => {
     nnPredictionDigit.innerText = "Calculating...";
 
     try {
-        const response = await fetch('http://website-pykn.onrender.com/predict', {
+        const response = await fetch('https://website-pykn.onrender.com/predict', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ pixels: pixelPayloadString })
@@ -183,7 +183,7 @@ btnTrain.addEventListener('click', async () => {
     btnTrain.disabled = true; // Temporary lock so the user doesn't spam click
 
     try {
-        const response = await fetch('http://website-pykn.onrender.com/train', {
+        const response = await fetch('https://website-pykn.onrender.com/train', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ 
