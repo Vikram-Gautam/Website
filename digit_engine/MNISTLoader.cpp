@@ -26,6 +26,9 @@ vector<Matrix> loadMNISTImages(const string& filename) {
     rows = swapEndian(rows);
     cols = swapEndian(cols);
 
+    if (numImages > 5000) {
+        numImages = 5000;
+    }
     int imageSize = rows * cols; 
     vector<Matrix> allImages;
     allImages.reserve(numImages);
@@ -53,6 +56,10 @@ vector<int> loadMNISTLabels(const string& filename) {
     uint32_t magic = 0, numLabels = 0;
     file.read(reinterpret_cast<char*>(&magic), 4);
     file.read(reinterpret_cast<char*>(&numLabels), 4);
+
+    if (numLabels > 5000) {
+        numLabels = 5000;
+    }
 
     numLabels = swapEndian(numLabels);
 
