@@ -52,12 +52,12 @@ function draw(e) {
     ctx.moveTo(x, y);
 }
 
-// event listeners for drawing 
-canvas.addEventListener('mousedown', startDrawing); //clikcs
-canvas.addEventListener('mouseup', stopDrawing); // lets go 
+// Pointer events support BOTH mouse and mobile touch screen inputs flawlessly
+canvas.addEventListener('pointerdown', startDrawing);   // clicks / first touch
+canvas.addEventListener('pointerup', stopDrawing);     // lets go / lifts finger
 
-canvas.addEventListener('mousemove', draw); // moves
-canvas.addEventListener('mouseleave', stopDrawing); //leaves the canvas
+canvas.addEventListener('pointermove', draw);          // moves / drags finger
+canvas.addEventListener('pointerleave', stopDrawing);  // leaves the canvas
 
 // Clear the sketchpad
 btnClearCanvas.addEventListener('click', () => { //arrow notation cause why not 
