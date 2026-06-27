@@ -9,10 +9,8 @@ app = FastAPI(title="High-Performance Portfolio API")
 # Enable CORS(Cross-Origin Resource Sharing) so the frontend HTML webpage can talk to this API seamlessly
 app.add_middleware( 
     CORSMiddleware,
-    allow_origins=["https://front-end-1fch.onrender.com",  # Explicitly allow your frontend site
-        "http://localhost:5500",               # Keeps local development working if needed
-        "http://127.0.0.1:5500"],  
-    allow_credentials=True,
+    allow_origins=["*"],  
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
