@@ -1,0 +1,13 @@
+# Python caches
+__pycache__/
+*.pyc
+
+# Local binary execution outputs (if any exist locally)
+*.exe
+*.o
+*.out
+bin/
+
+# OS specific files
+.DS_Store
+Thumbs.db

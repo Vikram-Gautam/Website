@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1> Portfolio </h1>
+        <p>By Vikram Gautam</p>
+    </header>
+
+    <main class="dashboard-grid">
+
+        <section class="project-card huffman-card">
+            <h2>Adaptive Huffman Compressor</h2>
+            <p class="card-description">Real-time character serialization via variable-length prefix tree mapping.</p>
+            
+            <div class="input-group">
+                <label for="huffman-input">Text Input String:</label>
+                <textarea id="huffman-input" placeholder="Type text here to compress..."></textarea>
+            </div>
+
+            <div class="button-row">
+                <button id="btn-compress" class="btn-compress1">Compress</button>
+                <button id="btn-decompress" class="btn-decompress1">Decompress Bitstream</button>
+            </div>
+
+            <div class="metrics-display">
+                 <p><strong>Metrics Output:</strong></p> <!-- strong bolds the text -->
+                <div>Compressed Bitstream: <span id="huffman-bitstream" class="token-output">-</span></div> <!-- span is a inline wrapper,-  meaing they will create a empty socket   -->
+                <div>Space Efficiency: <span id="huffman-ratio" class="token-output">-</span></div>
+                <div>Decoded Value: <span id="huffman-decoded" class="token-output">-</span></div>
+            </div>
+        </section>
+
+        <section class="project-card nn-card">
+            <h2>MNIST Neural Network Engine</h2>
+            <p class="card-description">784-input feedforward architecture predicting pixel data on matrix math vectors.</p>
+            
+            <div class="nn-workspace">
+                <div class="canvas-container">
+                    <canvas id="paint-canvas" width="280" height="280"></canvas>
+                    <br>
+                    <button id="btn-clear-canvas" class="btn-canvas1">Clear Sketchpad</button>
+                </div>
+
+                <div class="nn-controls">
+                    <h3>Model Parameters</h3>
+                    <div class="param-row">
+                        <label>Epochs: <input type="number" id="nn-epochs" value="3" min="1" max="10"></label>
+                        <label>LR: <input type="number" id="nn-lr" value="0.01" step="0.01" min="0.001"></label>
+                    </div>
+                    
+                    <div class="button-row">
+                        <button id="btn-train" class="btn-train1">Train Live Engine</button>
+                        <button id="btn-predict" class="btn-predict1">Predict Drawing</button>
+                    </div>
+
+                    <div class="console-box">
+                        <p class="console-title">C++ Training Log Stream:</p>
+                        <pre id="nn-console-output">Engine idling. Awaiting initialization parameters...</pre>
+                    </div>
+
+                    <div class="prediction-box">
+                        <h4>Network Inference Answer: <span id="nn-prediction-digit">-</span></h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>

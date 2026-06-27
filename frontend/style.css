@@ -1,0 +1,227 @@
+/* global themes */
+* {
+    box-sizing: border-box; /*so they stay the same size*/
+    margin: 0; /* initialize with no pading and margin*/
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* I just asked AI to recommend some fonts*/
+}
+/*1 rem is 16px for ref*/
+body {
+    background-color: #0f172a; /* looks like a premium blue */
+    color: #f8fafc;           /*off-white*/
+    padding: 2rem; 
+    min-height: 100vh; /*cover all the screen*/
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+header h1 {
+    font-size: 3rem;
+    color: #38bdf8; /*light blue*/
+   
+}
+
+header p {
+    color: #94a3b8; /* gray */
+}
+
+
+.dashboard-grid {
+    display: grid;
+   
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); /*auto  fit, min size 450, take 1 fraction*/
+    gap: 2rem; /*little gap*/
+    max-width: 1400px;
+    margin: 0 auto; /*top and bottom are zero left and right are auto*/
+}
+
+/*project card*/
+.project-card {
+    background-color: #1e293b; /* Slightly lighter slate for contrast */
+    border: 1px solid #334155;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 10px 15px -3px 'black';
+}
+
+.project-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #f1f5f9;
+}
+
+.card-description {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: #cbd5e1;
+}
+
+textarea {
+    width: 100%;
+    height: 80px;
+    background-color: #0f172a;
+    border: 1px solid #475569;
+    border-radius: 6px;
+    color: #fff;
+    padding: 0.75rem;
+    resize: none;
+}
+
+/*flex boxes*/
+.button-row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Universal Button Blueprint */
+button {
+    flex: 1; /* Tells buttons to grow equally to fill the row space */
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button:active {
+    transform: scale(0.98); /* Tiny physical click pop effect */
+}
+
+/* Color Accent Variations for buttons */
+.btn-compress1 { background-color: #0284c7; color: white; }
+.btn-compress1:hover { background-color: #0369a1; }
+
+.btn-decompress1 { background-color: #475569; color: #f1f5f9; }
+.btn-decompress1:hover { background-color: #334155; }
+
+.btn-canvas1 { background-color: #ef4444; color: white; }
+.btn-canvas1:hover { background-color: #dc2626; }
+
+.btn-train1 { background-color: #f59e0b; color: #1e293b; }
+.btn-train1:hover { background-color: #d97706; }
+
+.btn-predict1 { background-color: #22c55e; color: white; }
+.btn-predict1:hover { background-color: #16a34a; }
+
+
+.metrics-display {
+    background-color: #0f172a;
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid #38bdf8;
+    font-size: 0.9rem;
+}
+
+.metrics-display div {
+    margin-top: 0.5rem;
+    color: #cbd5e1;
+}
+
+.token-output {
+    font-family: monospace;
+    color: #34d399; /* Mint green for live calculated strings */
+    word-break: break-all;
+}
+
+/* Neural Network Two-Column Workspace Splitter via Flexbox */
+.nn-workspace {
+    display: flex;
+    flex-wrap: wrap; /* Wraps components to single file view on smaller monitors */
+    gap: 2rem;
+}
+
+.canvas-container {
+    text-align: center;
+}
+
+canvas {
+    background-color: #000000; /* Solid dark canvas layer matching MNIST format */
+    border: 2px solid #475569;
+    border-radius: 8px;
+    cursor: crosshair;
+}
+
+.nn-controls {
+    flex: 1;
+    min-width: 250px;
+}
+
+/* FLEXBOX: Organizes param inputs side-by-side */
+.param-row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.param-row label {
+    flex: 1;
+    font-size: 0.85rem;
+    color: #94a3b8;
+}
+
+.param-row input {
+    width: 100%;
+    margin-top: 0.25rem;
+    background-color: #0f172a;
+    border: 1px solid #475569;
+    border-radius: 4px;
+    color: white;
+    padding: 0.4rem;
+}
+
+/* Monospace Console Look */
+.console-box {
+    margin-bottom: 1.5rem;
+}
+
+.console-title {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    margin-bottom: 0.25rem;
+}
+
+#nn-console-output {
+    background-color: #000;
+    border: 1px solid #334155;
+    padding: 0.75rem;
+    border-radius: 6px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.8rem;
+    color: #e2e8f0;
+    max-height: 120px;
+    overflow-y: auto; /* Adds a scrollbar if logs get too tall */
+    white-space: pre-wrap;
+}
+
+.prediction-box {
+    background-color: #0f172a;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px dashed #22c55e;
+}
+
+#nn-prediction-digit {
+    font-size: 1.8rem;
+    color: #22c55e;
+    font-weight: 800;
+    margin-left: 0.5rem;
+}
