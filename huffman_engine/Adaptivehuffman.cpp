@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-#include "AdaptiveHuffman.h"
+#include "Adaptivehuffman.h"
 
 using namespace std;
 
