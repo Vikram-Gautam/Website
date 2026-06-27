@@ -2,9 +2,9 @@
 #define ADAPTIVE_HUFFMAN_H
 
 #include <string>
-#include <vector>
 #include <utility>
 #include <unordered_map> // can't use namespace as it will cause "Namespace Poisoning", apparently it will force all my files to use it, when i incldue this header. But i was goint to use it either ways. but then again better be safe than sorry :)
+#include <vector>
 
 // The actual node which will store the data
 struct HuffmanNode {
