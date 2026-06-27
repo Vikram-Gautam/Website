@@ -57,12 +57,14 @@ vector<int> loadMNISTLabels(const string& filename) {
     file.read(reinterpret_cast<char*>(&magic), 4);
     file.read(reinterpret_cast<char*>(&numLabels), 4);
 
-    if (numLabels > 5000) {
-        numLabels = 5000;
-    }
+  
 
     numLabels = swapEndian(numLabels);
 
+      if (numLabels > 5000) {
+        numLabels = 5000;
+    }
+    
     vector<int> labels(numLabels);
     for (uint32_t i = 0; i < numLabels; i++) {
         unsigned char label = 0;
