@@ -1,7 +1,7 @@
 #include "MNISTLoader.h"
 #include <fstream>
 #include <stdexcept>
-
+#include <cstdint>
 using namespace std;
 
 // Internal helper: Flips a 32-bit integer from Big-Endian to Little-Endian
